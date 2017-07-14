@@ -1,19 +1,21 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+
+Prints out a json file in a pretty prent format.
+
+Anton Demkin, 2017
+antondemkin@yandex.ru
 
 # Quickstart
 
 [TODO]
 
-Example of script launch on Linux, Python 3.5:
+usage:
+python pprint_json.py [path]
 
-```#!bash
+example:
+python pprint_json.py example.json
 
-$ python pprint_json.py <path to file>
-# TODO add output example
-
-```
 
 # Project Goals
 
