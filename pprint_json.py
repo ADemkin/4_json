@@ -10,7 +10,10 @@ antondemkin@yandex.ru
 import json
 import sys
 import os
-import pprint
+
+
+def pretty_print_json(json_data):
+    print(json.dumps(json_data, sort_keys=True, indent=4, ensure_ascii=False))
 
 
 def main():
@@ -21,8 +24,7 @@ def main():
         else:
             with open(path) as file:
                 json_data = json.load(file)
-            pp_json = pprint.pprint(json_data, indent=4)
-            print(pp_json)
+                pretty_print_json(json_data)
 
 
 if __name__ == '__main__':
