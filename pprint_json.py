@@ -18,8 +18,8 @@ def main():
             try:
                 json_data = load_json(path)
                 pretty_print_json(json_data)
-            except:
-                print("%s is not a valid json file." % path)
+            except Exception as error:
+                print('Error: %s' % error)
         else:
             print('%s not found.' % path)
     else:
