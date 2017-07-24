@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 
 
 def load_json(filepath):
@@ -15,11 +16,12 @@ def pretty_print_json(json_data):
 def main():
     if len(sys.argv) > 1:
         path = sys.argv[1]
-        try:
-            json_data = load_json(path)
-            pretty_print_json(json_data)
-        except Exception as error:
-            print('Error: %s' % error)
+        if os.path.exists(path):
+            try:
+                json_data = load_json(path)
+                pretty_print_json(json_data)
+            except json.decoder.JSONDecodeError:
+                print('%s is not a valid json file.' % path)
     else:
         print('Usage: pprint_json.py [file]')
 
